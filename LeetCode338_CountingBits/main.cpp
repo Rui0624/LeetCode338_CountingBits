@@ -13,3 +13,19 @@ int main(int argc, const char * argv[]) {
     std::cout << "Hello, World!\n";
     return 0;
 }
+
+class Solution {
+public:
+    vector<int> countBits(int num) {
+        vector<int> numBits{0};
+        
+        for(int i = 1; i <= num; i++)
+        {
+            if( i % 2 == 0)
+                numBits.push_back(numBits[i / 2]);
+            else
+                numBits.push_back(numBits[i / 2] + 1);
+        }
+        return numBits;
+    }
+};
